@@ -19,31 +19,31 @@ require '../controller/formController.php';
                 <label for="lastname">Prénom :</label>
                 <input name="lastName" type="text" class="form-control" id="lastname" placeholder="votre prénom :">
             </div>
-              <div class="form-group">
+            <div class="form-group">
                 <label for="birthdate">Date de naissance :</label>
                 <input name="birthDate" type="date" class="form-control" id="birthdate" placeholder="votre date de naissance :">
             </div>
-              <div class="form-group">
+            <div class="form-group">
                 <label for="adress">Adresse</label>
                 <input name="adress" type="text" class="form-control" id="adress" placeholder="votre adresse :">
             </div>
-             <div class="form-group">
+            <div class="form-group">
                 <label for="phone">N°de tel</label>
                 <input name="phone" type="text" class="form-control" id="phone" placeholder="votre n°de tel :">
             </div>
-              <div class="form-group">
+            <div class="form-group">
                 <label for="zipcode">Code Postal</label>
                 <input name="zipCode" type="text" class="form-control" id="zipcode" placeholder="votre code postal :">
             </div>
-            
+                
             <select name="id_Services" class="custom-select custom-select-sm">
-  <option selected>Selectionner le service</option>
-  <option value="1">Maintenance</option>
-  <option value="2">Web Developer</option>
-  <option value="3">Web Designer</option>
-  <option value="4">Reférenceur</option>
-
-</select>
+                <option selected>Selectionner le service</option>
+                <option value="1">Maintenance</option>
+                <option value="2">Web Developer</option>
+                <option value="3">Web Designer</option>
+                <option value="4">Reférenceur</option>
+                    
+            </select>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

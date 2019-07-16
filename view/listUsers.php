@@ -24,7 +24,7 @@ require '../controller/listUsersController.php';
                     <td> <?=$displayUser['lastName']?>  </td>
                     <td> <?=$displayUser['firstName']?> </td>
                     <td> <?=$displayUser['phone']?> </td>
-                    <td> <?=$displayUser['birthDate']?> </td>
+                    <td> <?=age($displayUser['birthDate'])?> </td>
                     <td> <?=$displayUser['adress']?> </td>
                     <td> <?=$displayUser['zipCode']?> </td>  
                     <td> <?=$displayUser['phone']?> </td>

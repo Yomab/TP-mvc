@@ -1,5 +1,6 @@
 <?php
 //class User qui hérite de DataBase.php (DB)
+
 class userLog extends DB{
     public $id;
     public $firstName;
@@ -30,10 +31,19 @@ class userLog extends DB{
     }
     
      public function displayUser(){
-        $query = 'SELECT * FROM `userLog`';
-        $selectUser = $this->db->query($query);
-        $displayUsers=$selectUser->fetchAll();
+        $query = 'SELECT * FROM `userLog` INNER JOIN Services ON Services.id = userLog.id_Services WHERE id_Services = :id' ;
+        $selectUser = $this->db->prepare($query);
+        $selectUser->bindValue(':id', $this->id_Services, PDO::PARAM_INT);
+        $selectUser->execute();
+        $displayUsers=$selectUser->fetchAll(PDO::FETCH_ASSOC);
         return $displayUsers;
+     }
+     public function displayUser2(){
+        $query = 'SELECT * FROM `userLog` INNER JOIN Services ON Services.id = userLog.id_Services' ;
+        $selectUser = $this->db->prepare($query);
+        $selectUser->execute();
+        $displayUsers2 = $selectUser->fetchAll(PDO::FETCH_ASSOC);
+        return $displayUsers2;
      }
 }
 

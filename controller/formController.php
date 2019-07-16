@@ -1,6 +1,6 @@
 <?php
 //il faut tjrs appeler la base de donnée dans le controller
-require '../model/Database.php';
+require '../model/Database.php'; 
 require '../model/user.php';
 
 if(count($_POST) > 0){

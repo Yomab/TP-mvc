@@ -16,10 +16,11 @@ require '../controller/listUsersController.php';
         <form action="" method="POST">  
             <select name="selector">
                 <option value="" selected disabled>selectionner un service</option>
-                <option value="1" >Maintenance</option>
-                <option value="2" >Web Developer</option>
-                <option value="3" >Web Designer</option>
-                <option value="4" >Référenceur</option>
+          <?php foreach($displayServicesList as $displayServicesList1){?>
+
+
+                <option value="<?= $displayServicesList1['id'];?>"><?= $displayServicesList1['serviceName'];?></option>
+      <?php } ?>
                 
             </select>
             <input type="submit" value="selectionner">
@@ -40,7 +41,8 @@ require '../controller/listUsersController.php';
                     <td> <?=$displayUser['adress']?> </td>
                     <td> <?=$displayUser['zipCode']?> </td>  
                     <td> <?=$displayUser['phone']?> </td>
-                    <td> <?=$displayUser['id_Services']?> </td>
+                    <td> <?=$displayUser['serviceName']?> </td>
+                    <td>  <a href="http://tpmvc/view/listUsers.php?delete= <?=$displayUser['idLog'];?>">Supprimer</a></td>
                 </tr>
                 
                 <?php } ?>

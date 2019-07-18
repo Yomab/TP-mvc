@@ -1,6 +1,5 @@
+<?php
+require_once 'view/indexView.php';
 
-         <?php
-require 'view/indexView.php';
-        
 
 

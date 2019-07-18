@@ -10,6 +10,7 @@ class userLog extends DB{
     public $zipCode;
     public $phone;
     public $id_Services;
+    
     public function __construct(){
         //On récupere le constructeur de la page DataBase.php qui est le parent de la class User
         parent::__construct();
@@ -24,7 +25,7 @@ class userLog extends DB{
         $addUser->bindValue(':adress', $this->adress, PDO::PARAM_STR); 
         $addUser->bindValue(':zipCode', $this->zipCode, PDO::PARAM_STR); 
         $addUser->bindValue(':phone', $this->phone, PDO::PARAM_STR); 
-        $addUser->bindValue(':id_Services', $this->id_Services, PDO::PARAM_INT);  
+        $addUser->bindValue(':id_Services', $this->id_Services, PDO::PARAM_INT);
         if($addUser->execute()){
             return true;
         }
@@ -39,11 +40,29 @@ class userLog extends DB{
         return $displayUsers;
      }
      public function displayUser2(){
-        $query = 'SELECT * FROM `userLog` INNER JOIN Services ON Services.id = userLog.id_Services' ;
+      $query = 'SELECT userLog.id AS idLog,userLog.lastName, userLog.firstName,userLog.birthDate,userLog.adress,userLog.zipCode,userLog.phone,Services.serviceName,Services.description FROM userLog INNER JOIN Services ON Services.id = userLog.id_Services' ;
         $selectUser = $this->db->prepare($query);
         $selectUser->execute();
         $displayUsers2 = $selectUser->fetchAll(PDO::FETCH_ASSOC);
         return $displayUsers2;
      }
-}
+
+     public function displayService(){
+        $query = 'SELECT * FROM Services';
+        $selectService=$this->db->prepare($query);
+        $selectService->execute();
+        $displayServices=$selectService->fetchAll(PDO::FETCH_ASSOC);
+        return $displayServices;
+ 
+     }
+     public function deleteUser(){
+        $query = 'DELETE FROM userLog WHERE id=:id';
+        $deleteUser=$this->db->prepare($query);
+        $deleteUser->bindValue(':id', $this->id, PDO::PARAM_INT);
+        if($deleteUser->execute()){
+           return true;
+        }
+
+     }
+     }
 

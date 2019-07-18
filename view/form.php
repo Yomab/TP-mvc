@@ -35,14 +35,14 @@ require '../controller/formController.php';
                 <label for="zipcode">Code Postal</label>
                 <input name="zipCode" type="text" class="form-control" id="zipcode" placeholder="votre code postal :">
             </div>
-                
+
             <select name="id_Services" class="custom-select custom-select-sm">
                 <option selected>Selectionner le service</option>
                 <option value="1">Maintenance</option>
                 <option value="2">Web Developer</option>
                 <option value="3">Web Designer</option>
                 <option value="4">Reférenceur</option>
-                    
+
             </select>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
